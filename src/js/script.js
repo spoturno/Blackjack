@@ -116,10 +116,10 @@ function dealCardsTimer(player, time) {
     }, time);
 }
 
-function dealCARDS(player) {
+async function dealCARDS(player) {
     let card = deck.cards.pop();
     addCardToHand(player, card.value);
-    showCard(card, player);
+    await showCard(card, player);
     updateScore(card.value, player);
     showScore(player);
 
@@ -145,7 +145,7 @@ function addCardToHand(player, card) {
     player["hand"].push(card);
 }
 
-function showCard(card, player) {
+async function showCard(card, player) {
     if (player["score"] <= 21) {
         let image = document.createElement("img");
         image.src = `cards/${card.value}${card.suit}.svg`;
@@ -153,7 +153,9 @@ function showCard(card, player) {
         image.style.width = "150px";
         //make cards stack in player box (fix position)
         document.querySelector(player["div"]).appendChild(image);
-        hitSound.play();
+
+        hitSound.currentTime = 0;
+        await hitSound.play();
     }
 }
 
