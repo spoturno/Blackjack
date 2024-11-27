@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a3c0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.table {
+    position: relative;
+    background: radial-gradient(circle, #116611, #0a3c0a);
+    border-radius: 50%;
+    width: 95%;
+    max-width: 1000px; /* Increased size */
+    height: 700px; /* Increased size */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dealer {
+    position: absolute;
+    top: 5%;
+    text-align: center;
+    width: 200px;
+}
+
+.dealer .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    min-height: 160px;
+    background-color: #224422;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.players {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.player {
+    position: absolute;
+    width: 150px;
+    text-align: center;
+}
+
+#player1 {
+    top: 80%;
+    left: 15%;
+}
+
+#player2 {
+    top: 80%;
+    left: 42%;
+}
+
+#player3 {
+    top: 80%;
+    left: 70%;
+}
+
+.player .bet-space {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.player .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    min-height: 160px;
+    background-color: #224422;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.player .controls {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.player .controls .action {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+}
+
+.player .controls .action.stand {
+    background-color: #ff5555; /* Red for Stand */
+}
+
+.player .controls .action.hit {
+    background-color: #55ff55; /* Green for Hit */
+}
+
+.player .controls .action.double {
+    background-color: #5555ff; /* Blue for Double */
+}
+
+.player .controls .action.split {
+    background-color: #ffcc00; /* Yellow for Split */
+}
+
+.player .controls .action:hover {
+    opacity: 0.8;
+}
+
+.player .controls .action:active {
+    transform: scale(0.95);
+}
+
+.play-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play-dialog .deal {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: #28a745;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.play-dialog .deal:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.play-dialog .deal:active {
+    transform: scale(0.95);
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.dealer .cards img,
+.player .cards img {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: 150px;
+    width: 100px;
+}

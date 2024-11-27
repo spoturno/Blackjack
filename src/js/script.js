@@ -11,7 +11,7 @@ document.querySelector("#stand-button").addEventListener("click", standButton);
 document.querySelector("#bet-button").addEventListener("click", addBet);
 
 //new audio object
-const hitSound = new Audio("audio/swish.m4a");
+const hitSound = new Audio("audio/swish.mp3");
 
 //create blakcjack object for game 
 let blackjack = {
@@ -148,7 +148,7 @@ function addCardToHand(player, card) {
 function showCard(card, player) {
     if (player["score"] <= 21) {
         let image = document.createElement("img");
-        image.src = `images/${card.value}${card.suit}.png`;
+        image.src = `cards/${card.value}${card.suit}.svg`;
         image.style.height = "200px";
         image.style.width = "150px";
         //make cards stack in player box (fix position)
